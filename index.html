@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ma liste de Noël 2026</title>
+<meta name="description" content="Ma liste de Noël : idées de cadeaux avec prix, liens et réservation pour éviter les doublons.">
+<meta name="theme-color" content="#101b33">
+<meta property="og:title" content="Ma liste de Noël 2026">
+<meta property="og:description" content="Mes idées de cadeaux, avec les prix et les liens.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <button class="theme" id="theme" aria-label="Changer de thème">🌓</button>
+  <h1>Mes voeux<br>de Noël</h1>
+  <p class="lead">Mes voeux pour noël sont retrouvable ci-dessous ! En espérant que le site te convient ^^.</p>
+  <div class="slots" id="slots" role="list"></div>
+  <p class="progress" id="progress" aria-live="polite"></p>
+  <dl class="facts">
+    <div><dt>Idées</dt><dd id="nb">0</dd></div>
+    <div><dt>Budget connu</dt><dd id="total">0 €</dd></div>
+    <div><dt>Noël</dt><dd id="jours">…</dd></div>
+  </dl>
+</header>
+<nav class="toolbar" aria-label="Filtres">
+  <div class="chips" id="filtres"></div>
+  <label class="sort"><span class="sr">Trier</span>
+    <select id="tri"><option value="priorite">Priorité</option><option value="prix-asc">Prix croissant</option><option value="prix-desc">Prix décroissant</option></select>
+  </label>
+</nav>
+<main id="liste"></main>
+<footer class="foot">
+  <button class="share" id="share">Partager ma liste</button>
+  <p>La réservation est enregistrée sur ton appareil : préviens la famille quand tu offres un cadeau.</p>
+</footer>
+<div class="toast" id="toast" role="status"></div>
+<template id="tpl">
+  <article class="card">
+    <div class="visual"><span class="badge"></span><span class="emo"></span><img alt="" loading="lazy" decoding="async" hidden></div>
+    <div class="body">
+      <div class="head"><div><h2></h2><p class="brand"></p></div><p class="price"></p></div>
+      <p class="desc"></p>
+      <ul class="tags"></ul>
+      <div class="actions"><a class="btn buy" target="_blank" rel="noopener"></a><button class="btn take" aria-pressed="false"></button></div>
+    </div>
+  </article>
+</template>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
